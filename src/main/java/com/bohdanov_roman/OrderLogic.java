@@ -1,3 +1,5 @@
+package com.bohdanov_roman;
+
 import org.apache.log4j.Logger;
 
 public class OrderLogic {
