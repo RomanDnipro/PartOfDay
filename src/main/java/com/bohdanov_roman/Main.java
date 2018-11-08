@@ -1,7 +1,6 @@
 package com.bohdanov_roman;
 
 import org.apache.log4j.Logger;
-
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 
@@ -10,8 +9,8 @@ public class Main {
 
     public static void main(String[] args) throws UnsupportedEncodingException {
         LOG.info(DayTimeDeterminant.PROGRAM_STARTS_MESSAGE);
-        Calendar calendar = Calendar.getInstance();
 
+        Calendar calendar = Calendar.getInstance();
         String message = null;
         try {
             message = DayTimeDeterminant.partOfDay(calendar.get(Calendar.HOUR_OF_DAY));

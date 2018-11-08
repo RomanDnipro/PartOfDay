@@ -1,7 +1,6 @@
 package com.bohdanov_roman;
 
 import org.apache.log4j.Logger;
-
 import java.util.ResourceBundle;
 
 public class DayTimeDeterminant {
@@ -13,20 +12,22 @@ public class DayTimeDeterminant {
     public static final int FIRST_HOUR_OF_EVENING = LAST_HOUR_OF_DAY;
     public static final int LAST_HOUR_OF_EVENING = 23;
     public static final int FIRST_HOUR_OF_NIGHT = LAST_HOUR_OF_EVENING;
-    public static final int LAST_HOUR_OF_NIGHT = FIRST_HOUR_OF_MORNING;
     public static final int MIDNIGHT = 0;
 
-    public static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle("message_resource");
+    private static final ResourceBundle RESOURCE_BUNDLE = ResourceBundle.getBundle("message_resource");
     public static final String MORNING_MESSAGE = RESOURCE_BUNDLE.getString("morningMessage");
     public static final String DAY_MESSAGE = RESOURCE_BUNDLE.getString("dayMessage");
     public static final String EVENING_MESSAGE = RESOURCE_BUNDLE.getString("eveningMessage");
     public static final String NIGHT_MESSAGE = RESOURCE_BUNDLE.getString("nightMessage");
-    public static final String ERROR_MESSAGE = RESOURCE_BUNDLE.getString("errorMessage");
-    public static final String PROGRAM_FINISHED_MESSAGE = RESOURCE_BUNDLE.getString("programFinishedMessage");
-    public static final String PROGRAM_STARTS_MESSAGE = RESOURCE_BUNDLE.getString("programStartsMessage");
+    static final String PROGRAM_FINISHED_MESSAGE = RESOURCE_BUNDLE.getString("programFinishedMessage");
+    static final String PROGRAM_STARTS_MESSAGE = RESOURCE_BUNDLE.getString("programStartsMessage");
 
+    /**
+     * @return welcome message to User-World depends on daytime and lang
+     * @throws IllegalArgumentException
+     */
     public static String partOfDay(int hour) throws IllegalArgumentException {
-        LOG.info("partOfDay is starting");
+        LOG.info("partOfDay is executed...");
         if ((hour < 0) || (hour > 23)) {
             throw new IllegalArgumentException("hour argument should not be less 0 and more then 23");
         }
