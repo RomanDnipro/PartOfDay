@@ -5,7 +5,6 @@ import org.junit.Test;
 import static com.bohdanov_roman.DayTimeDeterminant.*;
 
 public class DayTimeDeterminantTest {
-
     private String expectedMessageFromResources;
     private String actualMessage;
 
