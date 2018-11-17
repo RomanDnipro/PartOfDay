@@ -6,21 +6,23 @@ import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
 
 public class Main {
+
     // Log file located in C:\\TMP\\log_file.log , look resources/log4j.properties
-    private static final Logger LOG = Logger.getLogger(Main.class);
+    static final Logger loggerToFile = Logger.getLogger("APP2");
+    private static final Logger loggerToConsole = Logger.getLogger("APP1");
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        LOG.info(DayTimeDeterminant.PROGRAM_STARTS_MESSAGE);
+        loggerToFile.info(DayTimeDeterminant.PROGRAM_STARTS_MESSAGE);
 
         Calendar calendar = Calendar.getInstance();
         String message = null;
         try {
             message = DayTimeDeterminant.partOfDay(calendar.get(Calendar.HOUR_OF_DAY));
         } catch (Exception e) {
-            e.printStackTrace();
-            LOG.error(e);
+            loggerToFile.error(e);
+            loggerToConsole.error(e);
         }
         System.out.println(message);
-        LOG.info(DayTimeDeterminant.PROGRAM_FINISHED_MESSAGE);
+        loggerToFile.info(DayTimeDeterminant.PROGRAM_FINISHED_MESSAGE);
     }
 }

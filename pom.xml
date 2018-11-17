@@ -10,26 +10,27 @@
 
     <dependencies>
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-        <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
+
+        <!--Apache Commons Logging Bridge-->
+        <!--Advice from https://logging.apache.org/log4j/log4j-2.1/maven-artifacts.html :
+        If existing components use Apache Commons Logging 1.x and you want to have
+        this logging routed to Log4j 2, then add the following but do not remove any
+        Commons Logging 1.x dependencies.-->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-jcl</artifactId>
+            <version>2.1</version>
         </dependency>
     </dependencies>
-
 </project>
